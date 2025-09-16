@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 #include "value.h"
 #include "memory.h"
 
@@ -15,7 +17,7 @@ void writeValueArray(ValueArray* array, Value value) {
         array->values = GROW_ARRAY(Value, array->values, oldCapacity, array->capacity);
     }
 
-    array->values[array->count+1] = value;
+    array->values[array->count] = value;
     array->count++;
 }
 
